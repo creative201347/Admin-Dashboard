@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import { Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "./theme";
-import { Dashboard, Layout, Products } from "./pages";
+import { Customers, Dashboard, Layout, Products } from "./pages";
 
 const App = () => {
   const mode = useSelector((state) => state.theme.mode);
@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/customers" element={<h1>Customers</h1>} />
+          <Route path="/customers" element={<Customers />} />
           <Route path="/transactions" element={<h1>Transactions</h1>} />
           <Route path="/geography" element={<h1>Geography</h1>} />
           <Route path="/overview" element={<h1>Overview</h1>} />

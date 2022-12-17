@@ -16,9 +16,14 @@ export const adminApi = createApi({
       query: () => `client/products`,
       providesTags: ["Products"],
     }),
+    getCustomers: builder.query({
+      query: () => `client/customers`,
+      providesTags: ["User"],
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetUserQuery, useGetProductsQuery } = adminApi;
+export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery } =
+  adminApi;
