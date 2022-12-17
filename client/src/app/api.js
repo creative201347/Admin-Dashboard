@@ -5,15 +5,20 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const adminApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5001" }),
   reducerPath: "adminApi",
-  tagTypes: ["User"],
+  tagTypes: ["User", "Products"],
+
   endpoints: (builder) => ({
     getUser: builder.query({
       query: (id) => `general/user/${id}`,
       providesTags: ["User"],
+    }),
+    getProducts: builder.query({
+      query: () => `client/products`,
+      providesTags: ["Products"],
     }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetUserQuery } = adminApi;
+export const { useGetUserQuery, useGetProductsQuery } = adminApi;

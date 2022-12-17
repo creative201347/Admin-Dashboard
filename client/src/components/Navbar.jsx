@@ -15,7 +15,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-import { FlexBetween } from "./FlexBetween";
+import { FlexBetween } from "./common/FlexBetween";
 import { setMode } from "../app/themeSlice";
 
 export const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {

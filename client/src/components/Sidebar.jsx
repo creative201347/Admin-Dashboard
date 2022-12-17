@@ -30,7 +30,7 @@ import {
   Menu as MenuIcon,
 } from "@mui/icons-material";
 
-import { FlexBetween } from "./FlexBetween";
+import { FlexBetween } from "./common/FlexBetween";
 import profileImage from "../assets/profile.jpg";
 
 const navItems = [
