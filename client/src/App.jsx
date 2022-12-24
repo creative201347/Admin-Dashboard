@@ -5,7 +5,14 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import { Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "./theme";
-import { Customers, Dashboard, Layout, Products, Transactions } from "./pages";
+import {
+  Customers,
+  Dashboard,
+  Geography,
+  Layout,
+  Products,
+  Transactions,
+} from "./pages";
 
 const App = () => {
   const mode = useSelector((state) => state.theme.mode);
@@ -20,7 +27,7 @@ const App = () => {
           <Route path="/products" element={<Products />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/transactions" element={<Transactions />} />
-          <Route path="/geography" element={<h1>Geography</h1>} />
+          <Route path="/geography" element={<Geography />} />
           <Route path="/overview" element={<h1>Overview</h1>} />
           <Route path="/daily" element={<h1>Daily</h1>} />
           <Route path="/monthly" element={<h1>Monthly</h1>} />
