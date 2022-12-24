@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const adminApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5001" }),
   reducerPath: "adminApi",
-  tagTypes: ["User", "Products"],
+  tagTypes: ["User", "Products", "Customers", "Transactions"],
 
   endpoints: (builder) => ({
     getUser: builder.query({
@@ -18,12 +18,24 @@ export const adminApi = createApi({
     }),
     getCustomers: builder.query({
       query: () => `client/customers`,
-      providesTags: ["User"],
+      providesTags: ["Customers"],
+    }),
+    getTransactions: builder.query({
+      query: ({ page, pageSize, sort, search }) => ({
+        url: "client/transactions",
+        method: "GET",
+        params: { page, pageSize, sort, search },
+      }),
+      providesTags: ["Transactions"],
     }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery } =
-  adminApi;
+export const {
+  useGetUserQuery,
+  useGetProductsQuery,
+  useGetCustomersQuery,
+  useGetTransactionsQuery,
+} = adminApi;
